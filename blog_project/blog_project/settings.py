@@ -37,12 +37,18 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    #local app
-    'posts.apps.PostsConfig',
+    'django.contrib.sites',
+
     #third party app
     'rest_framework',
     'rest_framework.authtoken',
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
     'rest_auth',
+    'rest_auth.registration',
+    # local app
+    'posts.apps.PostsConfig',
 ]
 
 REST_FRAMEWORK = {
@@ -140,3 +146,5 @@ STATIC_URL = '/static/'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+SITE_ID = 1
